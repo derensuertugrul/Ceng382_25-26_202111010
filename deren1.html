@@ -3,6 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript">
+        window.onload = startTime;
+        function startTime()
+        {
+        var today=new Date();
+        var h=today.getHours();
+        var m=today.getMinutes();
+        var s=today.getSeconds();
+        
+        h=checkTime(h);
+        m=checkTime(m);
+        s=checkTime(s);
+        document.getElementById('saat').innerHTML=h+":"+m+":"+s;
+        t=setTimeout('startTime()',1000);
+        }
+        
+        function checkTime(i)
+        {
+        if (i<10)
+        {
+        i="0" + i;
+        }
+        return i;
+        }
+        </script>
+        <p id="saat"></p>
+        
+        <script src="script.js"></script>
     <title>Hello Kitty Login</title>
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
     <style>
